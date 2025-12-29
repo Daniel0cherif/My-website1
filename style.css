@@ -164,7 +164,7 @@ h2 {
 
 .portfolio-item.vertical img {
     width: 100%;
-    height: 500px; /* Taller height for vertical app screenshots */
+    height: 500px !important; /* Taller height for vertical app screenshots */
     object-fit: cover;
     object-position: top; /* Ensures the top of the app is visible */
 }
