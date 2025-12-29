@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Highlight Service Cards on Scroll
     const observerOptions = {
-        threshold: 0.15 // Trigger when 15% of the card is visible
+        threshold: 0.5 // Trigger when 50% of the card is visible
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -42,6 +42,15 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 entry.target.classList.remove('active');
             }
+    // Highlight Service Cards on Click
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', function() {
+            // Remove active class from other cards
+            document.querySelectorAll('.card').forEach(c => {
+                if (c !== this) c.classList.remove('active');
+            });
+            // Toggle active class on clicked card
+            this.classList.toggle('active');
         });
     }, observerOptions);
 
