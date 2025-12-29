@@ -29,4 +29,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Highlight Service Cards on Scroll
+    const observerOptions = {
+        threshold: 0.5 // Trigger when 50% of the card is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            } else {
+                entry.target.classList.remove('active');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.card').forEach(card => {
+        observer.observe(card);
+    });
 });
