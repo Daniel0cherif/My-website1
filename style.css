@@ -131,10 +131,11 @@ h2 {
     border: 1px solid transparent;
 }
 
-.card:hover,
-.card.active {
-    transform: translateY(-10px);
-    border-color: var(--accent-color);
+@media (hover: hover) {
+    .card:hover {
+        transform: translateY(-10px);
+        border-color: var(--accent-color);
+    }
 }
 
 .card i {
