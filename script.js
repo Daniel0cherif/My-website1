@@ -38,6 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                // Remove active class from all other cards
+                document.querySelectorAll('.card').forEach(c => {
+                    if (c !== entry.target) c.classList.remove('active');
+                });
                 entry.target.classList.add('active');
             } else {
                 entry.target.classList.remove('active');
