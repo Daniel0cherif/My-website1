@@ -42,6 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 entry.target.classList.remove('active');
             }
+        });
+    }, observerOptions);
+
     // Highlight Service Cards on Click
     document.querySelectorAll('.card').forEach(card => {
         card.addEventListener('click', function() {
@@ -52,9 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // Toggle active class on clicked card
             this.classList.toggle('active');
         });
-    }, observerOptions);
+    });
 
     document.querySelectorAll('.card').forEach(card => {
         observer.observe(card);
     });
-});
+});   
