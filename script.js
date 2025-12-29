@@ -32,18 +32,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Highlight Service Cards on Scroll
     const observerOptions = {
-        threshold: 0.9 // Trigger when 50% of the card is visible
+        threshold: [0.1, 0.9] // Trigger at 10% (leaving) and 90% (centered)
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Remove active class from all other cards
+            if (entry.intersectionRatio >= 0.9) {
+                // High visibility: Activate and clear others
                 document.querySelectorAll('.card').forEach(c => {
                     if (c !== entry.target) c.classList.remove('active');
                 });
                 entry.target.classList.add('active');
-            } else {
+            } else if (!entry.isIntersecting) {
+                // Low visibility: Remove active
                 entry.target.classList.remove('active');
             }
         });
