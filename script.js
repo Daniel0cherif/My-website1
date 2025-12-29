@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Highlight Service Cards on Scroll
     const observerOptions = {
-        threshold: 0.5 // Trigger when 50% of the card is visible
+        threshold: 0.9 // Trigger when 50% of the card is visible
     };
 
     const observer = new IntersectionObserver((entries) => {
