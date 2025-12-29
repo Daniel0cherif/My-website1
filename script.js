@@ -29,4 +29,38 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Portfolio Slider
+    const track = document.querySelector('.slider-track');
+    const prevBtn = document.querySelector('.slider-btn.prev');
+    const nextBtn = document.querySelector('.slider-btn.next');
+
+    if (track) {
+        let currentIndex = 0;
+        
+        const updateSlider = () => {
+            const item = document.querySelector('.portfolio-item');
+            const itemWidth = item.offsetWidth;
+            const gap = parseInt(window.getComputedStyle(track).gap) || 0;
+            const moveAmount = (itemWidth + gap) * currentIndex;
+            track.style.transform = `translateX(-${moveAmount}px)`;
+        };
+
+        nextBtn.addEventListener('click', () => {
+            const items = document.querySelectorAll('.portfolio-item');
+            if (currentIndex < items.length - 1) {
+                currentIndex++;
+                updateSlider();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSlider();
+            }
+        });
+
+        window.addEventListener('resize', updateSlider);
+    }
 });   

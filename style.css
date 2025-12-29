@@ -145,16 +145,50 @@ h2 {
 }
 
 /* Portfolio Grid */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.slider-wrapper {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
     gap: 2rem;
 }
 
-.portfolio-item {
-    max-width: 400px; /* Prevents images from becoming too huge on wide screens */
+.slider-container {
+    overflow: hidden;
     width: 100%;
-    margin: 0 auto;   /* Centers the image in the grid column */
+}
+
+.slider-track {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.5s ease;
+    align-items: center;
+}
+
+.portfolio-item {
+    flex: 0 0 300px;
+    max-width: 300px;
+}
+
+.slider-btn {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-btn:hover {
+    background: var(--accent-color);
+    color: #000;
 }
 
 .portfolio-item img {
@@ -225,6 +259,11 @@ h2 {
 
     h2 {
         font-size: 2rem;
+    }
+
+    .portfolio-item {
+        flex: 0 0 250px;
+        max-width: 250px;
     }
 }
 
