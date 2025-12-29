@@ -151,7 +151,6 @@ h2 {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: 2rem;
 }
 
 .slider-container {
@@ -161,34 +160,14 @@ h2 {
 
 .slider-track {
     display: flex;
-    gap: 2rem;
+    gap: 0;
     transition: transform 0.5s ease;
     align-items: center;
 }
 
 .portfolio-item {
-    flex: 0 0 300px;
-    max-width: 300px;
-}
-
-.slider-btn {
-    background: transparent;
-    border: 1px solid var(--accent-color);
-    color: var(--accent-color);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: var(--transition);
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.slider-btn:hover {
-    background: var(--accent-color);
-    color: #000;
+    flex: 0 0 100%;
+    max-width: 100%;
 }
 
 .portfolio-item img {
@@ -262,8 +241,8 @@ h2 {
     }
 
     .portfolio-item {
-        flex: 0 0 250px;
-        max-width: 250px;
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 }
 

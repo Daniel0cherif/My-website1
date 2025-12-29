@@ -32,33 +32,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Portfolio Slider
     const track = document.querySelector('.slider-track');
-    const prevBtn = document.querySelector('.slider-btn.prev');
-    const nextBtn = document.querySelector('.slider-btn.next');
 
     if (track) {
         let currentIndex = 0;
+        const items = document.querySelectorAll('.portfolio-item');
+        const totalItems = items.length;
         
         const updateSlider = () => {
             const item = document.querySelector('.portfolio-item');
             const itemWidth = item.offsetWidth;
-            const gap = parseInt(window.getComputedStyle(track).gap) || 0;
-            const moveAmount = (itemWidth + gap) * currentIndex;
+            const moveAmount = itemWidth * currentIndex;
             track.style.transform = `translateX(-${moveAmount}px)`;
         };
 
-        nextBtn.addEventListener('click', () => {
-            const items = document.querySelectorAll('.portfolio-item');
-            if (currentIndex < items.length - 1) {
-                currentIndex++;
-                updateSlider();
-            }
+        const nextSlide = () => {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateSlider();
+        };
+
+        const prevSlide = () => {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            updateSlider();
+        };
+
+        // Auto Play (Rotate every 3 seconds)
+        let autoPlay = setInterval(nextSlide, 3000);
+
+        // Swipe Support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            clearInterval(autoPlay); // Pause on touch
         });
 
-        prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateSlider();
-            }
+        track.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchEndX < touchStartX - 50) nextSlide(); // Swipe Left
+            if (touchEndX > touchStartX + 50) prevSlide(); // Swipe Right
+            autoPlay = setInterval(nextSlide, 3000); // Restart auto play
         });
 
         window.addEventListener('resize', updateSlider);
