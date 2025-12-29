@@ -149,6 +149,12 @@ h2 {
     gap: 2rem;
 }
 
+.portfolio-item {
+    max-width: 400px; /* Prevents images from becoming too huge on wide screens */
+    width: 100%;
+    margin: 0 auto;   /* Centers the image in the grid column */
+}
+
 .portfolio-item img {
     width: 100%;
     height: 250px; /* Keeps all images the same height */
