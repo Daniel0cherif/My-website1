@@ -162,6 +162,12 @@ h2 {
     border-radius: 10px;
 }
 
+.portfolio-item.vertical img {
+    height: 500px; /* Taller height for vertical app screenshots */
+    object-fit: cover;
+    object-position: top; /* Ensures the top of the app is visible */
+}
+
 /* Contact Form */
 .contact-form {
     max-width: 600px;
