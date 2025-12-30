@@ -76,4 +76,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
         window.addEventListener('resize', updateSlider);
     }
+
+    // Highlight Service Cards on Scroll
+    const observerOptions = {
+        threshold: [0.1, 0.9]
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.intersectionRatio >= 0.9) {
+                document.querySelectorAll('.card').forEach(c => {
+                    if (c !== entry.target) c.classList.remove('active');
+                });
+                entry.target.classList.add('active');
+            } else if (!entry.isIntersecting) {
+                entry.target.classList.remove('active');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.card').forEach(card => {
+        observer.observe(card);
+    });
 });   

@@ -138,6 +138,11 @@ h2 {
     }
 }
 
+.card.active {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+}
+
 .card i {
     font-size: 2.5rem;
     color: var(--accent-color);
