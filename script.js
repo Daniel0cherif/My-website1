@@ -79,18 +79,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Highlight Service Cards on Scroll
     const observerOptions = {
-        threshold: [0.1, 0.9]
+        threshold: 0.5
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.intersectionRatio >= 0.9) {
+            if (entry.isIntersecting) {
                 document.querySelectorAll('.card').forEach(c => {
-                    if (c !== entry.target) c.classList.remove('active');
+                    c.classList.remove('active');
                 });
                 entry.target.classList.add('active');
-            } else if (!entry.isIntersecting) {
-                entry.target.classList.remove('active');
             }
         });
     }, observerOptions);
