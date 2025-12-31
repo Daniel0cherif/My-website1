@@ -131,6 +131,15 @@ h2 {
     border: 1px solid transparent;
 }
 
+.footer {
+    text-align: center;
+    padding: 2rem 5%;
+    background-color: var(--card-bg);
+    color: var(--text-secondary);
+    border-top: 1px solid #333;
+    margin-top: 3rem;
+}
+
 @media (hover: hover) {
     .card:hover {
         transform: translateY(-10px);
@@ -209,7 +218,7 @@ h2 {
     border-radius: 5px;
 }
 
-/* Mobile Responsive */
+/* Mobile Responsive (tablet)*/
 @media (max-width: 1024px) {
     section {
         padding: 3rem 5%;
@@ -252,6 +261,11 @@ h2 {
         flex: 0 0 100%;
         max-width: 100%;
     }
+
+    .footer {
+        padding: 1.5rem 5%;
+        margin-top: 2rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -261,5 +275,10 @@ h2 {
 
     .hero h1 {
         font-size: 2rem;
+    }
+
+    .footer {
+        font-size: 0.9rem;
+        padding: 1rem 5%;
     }
 }
