@@ -1,76 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio | Creative Services</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    </head>
-    <body>
-        <header>
-            <nav class="navbar">
-                <div class="logo">Daniel.Dev</div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel.Dev | Digital Alchemist</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="loading">
 
-        <main>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <div class="noise-overlay"></div>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Daniel<span class="dot">.</span>Dev</div>
+            <div class="menu-toggle">
+                <span>Menu</span>
+                <div class="hamburger-lines">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </nav>
+        <div class="menu-overlay">
+            <ul class="nav-links">
+                <li><a href="#home" class="menu-link">Home</a><span class="num">01</span></li>
+                <li><a href="#services" class="menu-link">Services</a><span class="num">02</span></li>
+                <li><a href="#portfolio" class="menu-link">Work</a><span class="num">03</span></li>
+                <li><a href="#contact" class="menu-link">Contact</a><span class="num">04</span></li>
+            </ul>
+        </div>
+    </header>
+
+    <main id="smooth-wrapper">
+        <div id="smooth-content">
+            
             <section id="home" class="hero">
-                <div class="hero-content">
-                    <h1>Elevating Digital Experiences</h1>
-                    <p>Expert solutions in Video, Web, Strategy, and AI.</p>
-                    <a href="#contact" class="cta-button">Let's Work Together</a>
+                <div class="container">
+                    <div class="hero-text-wrapper">
+                        <h1 class="reveal-text">Elevating</h1>
+                        <h1 class="reveal-text indented">Digital <span class="italic">Experiences</span></h1>
+                    </div>
+                    <div class="hero-footer">
+                        <p class="hero-desc">Expert solutions in Video, Web, Strategy, and AI.</p>
+                        <a href="#contact" class="circle-btn">
+                            <span>Start <br> Project</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </section>
 
+            <div class="marquee-section">
+                <div class="marquee-content">
+                    <span>Strategy &mdash; Development &mdash; Motion &mdash; AI Solutions &mdash; Strategy &mdash; Development &mdash; Motion &mdash; AI Solutions &mdash;</span>
+                </div>
+            </div>
+
             <section id="services" class="services">
-                <h2>My Services</h2>
-                <div class="service-grid">
-                    <div class="card">
-                        <i class="fas fa-film"></i>
-                        <h3>Video Editing</h3>
-                        <p>Professional cuts, color grading, and motion graphics to tell your story.</p>
+                <div class="container">
+                    <div class="section-header">
+                        <span class="label">02 / Expertise</span>
+                        <h2>What I Do</h2>
                     </div>
-                    <div class="card">
-                        <i class="fas fa-code"></i>
-                        <h3>Web/App Development</h3>
-                        <p>Responsive, high-performance websites and applications built with modern tech.</p>
-                    </div>
-                    <div class="card">
-                        <i class="fas fa-hashtag"></i>
-                        <h3>Social Media Strategy</h3>
-                        <p>Data-driven strategies to grow your audience and increase engagement.</p>
-                    </div>
-                    <div class="card">
-                        <i class="fas fa-robot"></i>
-                        <h3>AI Digital Services</h3>
-                        <p>Leveraging artificial intelligence for automation and content generation.</p>
+                    
+                    <div class="service-list">
+                        <div class="service-item">
+                            <span class="service-num">01</span>
+                            <h3>Video Editing</h3>
+                            <p>Cinematic storytelling, color grading, and motion graphics.</p>
+                            <i class="fas fa-film service-icon"></i>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-num">02</span>
+                            <h3>Web Development</h3>
+                            <p>High-performance websites built with React, GSAP, and Modern Tech.</p>
+                            <i class="fas fa-code service-icon"></i>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-num">03</span>
+                            <h3>Social Strategy</h3>
+                            <p>Data-driven audience growth and engagement analytics.</p>
+                            <i class="fas fa-hashtag service-icon"></i>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-num">04</span>
+                            <h3>AI Integration</h3>
+                            <p>Automation workflows and generative AI content solutions.</p>
+                            <i class="fas fa-robot service-icon"></i>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <section id="portfolio" class="portfolio">
-                <h2>Recent Work</h2>
-                <div class="slider-wrapper">
-                    <div class="slider-container">
-                        <div class="slider-track">
-                            <div class="portfolio-item">
-                                <img src="assets/Screenshot_20251229_221227_Gallery.jpg" alt="Video Editing Project">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="label">03 / Selected Work</span>
+                        <h2>Recent Projects</h2>
+                    </div>
+
+                    <div class="portfolio-grid">
+                        <div class="project-card large">
+                            <div class="img-container">
+                                <img src="assets/Screenshot_20251229_221227_Gallery.jpg" alt="Video Project" data-speed="0.9">
                             </div>
-                            <div class="portfolio-item vertical">
-                                <img src="assets/WhatsApp Image 2025-12-29 at 16.55.21.jpeg" alt="Web Development Project">
+                            <div class="project-info">
+                                <h4>Visual Narrative</h4>
+                                <span>Video Editing</span>
                             </div>
-                            <div class="portfolio-item vertical">
-                                <img src="assets/WhatsApp Image 2025-12-29 at 22.35.26.jpeg" alt="Social Media Strategy">
+                        </div>
+
+                        <div class="project-card vertical">
+                            <div class="img-container">
+                                <img src="assets/WhatsApp Image 2025-12-29 at 16.55.21.jpeg" alt="Web Dev" data-speed="1.1">
+                            </div>
+                            <div class="project-info">
+                                <h4>E-Commerce App</h4>
+                                <span>Development</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="img-container">
+                                <img src="assets/WhatsApp Image 2025-12-29 at 22.35.26.jpeg" alt="Strategy" data-speed="1.0">
+                            </div>
+                            <div class="project-info">
+                                <h4>Brand Growth</h4>
+                                <span>Social Media</span>
                             </div>
                         </div>
                     </div>
@@ -78,20 +143,51 @@
             </section>
 
             <section id="contact" class="contact">
-                <h2>Get In Touch</h2>
-                <form class="contact-form">
-                    <input type="text" placeholder="Name" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Message" rows="5" required></textarea>
-                    <button type="submit" class="cta-button">Send Message</button>
-                </form>
+                <div class="container">
+                    <div class="contact-wrapper">
+                        <div class="contact-text">
+                            <h2>Let's create <br> something <em>iconic.</em></h2>
+                            <p>Currently available for freelance worldwide.</p>
+                            <a href="mailto:hello@daniel.dev" class="email-link">hello@daniel.dev</a>
+                        </div>
+                        <form class="contact-form">
+                            <div class="input-group">
+                                <input type="text" required>
+                                <label>Your Name</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="email" required>
+                                <label>Your Email</label>
+                            </div>
+                            <div class="input-group">
+                                <textarea rows="1" required></textarea>
+                                <label>Tell me about your project</label>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
             </section>
-        </main>
 
-        <footer id="footer" class="footer">
-            <p>&copy; 2024 Daniel Cherif. All rights reserved.</p>
-        </footer>
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 Daniel.Dev</p>
+                        <div class="socials">
+                            <a href="#">Inst</a>
+                            <a href="#">X</a>
+                            <a href="#">Ln</a>
+                        </div>
+                        <p>Cairo, Egypt</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
 
-        <script src="script.js"></script>
-    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
